@@ -16,6 +16,12 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  email: {
+    type: String,
+    unique: true,
+    required: true,
+    lowercase: true,
+  },
 })
 
 class User {
