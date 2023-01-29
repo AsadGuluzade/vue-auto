@@ -29,7 +29,7 @@ const carSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    required: false,
   },
   price: {
     type: Number,
@@ -40,3 +40,6 @@ const carSchema = new mongoose.Schema({
     required: true,
   },
 })
+
+carSchema.plugin(autopopulate)
+module.exports = mongoose.model('Car', carSchema)
