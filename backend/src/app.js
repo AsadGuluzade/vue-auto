@@ -4,7 +4,7 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-
+const cors = require('cors')
 require('./database-connection')
 
 const indexRouter = require('./routes/index')
@@ -12,7 +12,12 @@ const usersRouter = require('./routes/users')
 const carsRouter = require('./routes/cars')
 
 const app = express()
-
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'POST'],
+  })
+)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
