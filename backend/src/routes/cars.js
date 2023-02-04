@@ -3,8 +3,6 @@ const Car = require('../models/car')
 
 const router = express.Router()
 
-module.exports = router
-
 router.get('/', async (req, res) => {
   const query = {}
   res.send(await Car.find(query).catch(error => console.log('Cars not found, error: ', error)))
@@ -69,3 +67,15 @@ router.get('/initialize', async (req, res) => {
     transmission: 'automatic',
   })
 })
+router.get('/filter', async (req, res) => {
+  const makeParam = req.query.make
+  const fuelParam = req.query.fuel
+  const query = {
+    make: makeParam,
+    fuel: fuelParam,
+  }
+
+  res.send(await Car.find(query).catch(error => console.log('Cars not found, error: ', error)))
+})
+
+module.exports = router

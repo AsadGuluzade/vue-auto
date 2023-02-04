@@ -5,10 +5,16 @@ import HelloWorld from './components/hello-world.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="https://images.hgmsites.net/lrg/2009-chevrolet-aveo-5dr-hb-lt-w-1lt-angular-front-exterior-view_100245756_l.jpg"
+      width="225"
+      height="225"
+    />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Auto" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
