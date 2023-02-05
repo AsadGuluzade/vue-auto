@@ -4,6 +4,7 @@ export default {
   data() {
     return {
       cars: [],
+      selected: '',
     }
   },
 
@@ -25,6 +26,14 @@ export default {
 </script>
 
 <template>
+  <div>Selected: {{ selected }}</div>
+
+  <select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
   <div>
     <div v-for="car in cars" v-bind:key="car.id">
       <h2>{{ car.make }}</h2>
