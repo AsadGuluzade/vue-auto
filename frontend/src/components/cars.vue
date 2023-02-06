@@ -23,11 +23,15 @@ export default {
       e.preventDefault()
 
       try {
-        const response = await axios.get(
-          'http://localhost:4444/api/cars/filter?make=' + this.selectedMake + '&fuel=' + this.selectedFuel
-        )
-        // JSON responses are automatically parsed.
-        this.cars = response.data
+        if (this.selectedMake || this.selectedFuel) {
+          const response = await axios.get(
+            'http://localhost:4444/api/cars/filter?make=' + this.selectedMake + '&fuel=' + this.selectedFuel
+          )
+          // JSON responses are automatically parsed.
+          this.cars = response.data
+        } else {
+          this.getData()
+        }
       } catch (error) {
         console.log(error)
       }
@@ -42,16 +46,14 @@ export default {
 <template>
   <form v-on:submit="searchFilter">
     <select v-model="selectedMake">
-      <option disabled value="">Select Make</option>
+      <option value="">Select Make</option>
       <option>Toyota</option>
       <option>Chevrolet</option>
       <option>Honda</option>
-      <option>Mitsubishi</option>
       <option>BMW</option>
-      <option></option>
     </select>
     <select v-model="selectedFuel">
-      <option disabled value="">Select Fuel</option>
+      <option value="">Select Fuel</option>
       <option>diesel</option>
       <option>petrol</option>
       <option>electric</option>

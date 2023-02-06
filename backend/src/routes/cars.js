@@ -18,6 +18,24 @@ router.get('/initialize', async (req, res) => {
     price: 5000,
     transmission: 'automatic',
   })
+  await Car.create({
+    make: 'Toyota',
+    model: 'Land cruiser',
+    year: 2015,
+    fuel: 'diesel',
+    type: 'SUV',
+    price: 48000,
+    transmission: 'automatic',
+  })
+  await Car.create({
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2021,
+    fuel: 'electric',
+    type: 'sedan',
+    price: 52000,
+    transmission: 'automatic',
+  })
 
   await Car.create({
     make: 'Chevrolet',
@@ -26,6 +44,24 @@ router.get('/initialize', async (req, res) => {
     fuel: 'petrol',
     type: 'sedan',
     price: 8000,
+    transmission: 'automatic',
+  })
+  await Car.create({
+    make: 'Chevrolet',
+    model: 'Aveo',
+    year: 2009,
+    fuel: 'diesel',
+    type: 'sedan',
+    price: 6500,
+    transmission: 'automatic',
+  })
+  await Car.create({
+    make: 'Chevrolet',
+    model: 'Bolt EV',
+    year: 2023,
+    fuel: 'electric',
+    type: 'sedan',
+    price: 58000,
     transmission: 'automatic',
   })
   await Car.create({
@@ -38,6 +74,24 @@ router.get('/initialize', async (req, res) => {
     transmission: 'manuel',
   })
   await Car.create({
+    make: 'Mercedes-Benz',
+    model: 'E-Klasse',
+    year: 2012,
+    fuel: 'diesel',
+    type: 'sedan',
+    price: 86000,
+    transmission: 'manuel',
+  })
+  await Car.create({
+    make: 'Mercedes-Benz',
+    model: 'G-Klasse',
+    year: 2021,
+    fuel: 'electric',
+    type: 'SUV',
+    price: 98000,
+    transmission: 'automatic',
+  })
+  await Car.create({
     make: 'Honda',
     model: 'Civic',
     year: 2009,
@@ -46,7 +100,24 @@ router.get('/initialize', async (req, res) => {
     price: 7000,
     transmission: 'automatic',
   })
-
+  await Car.create({
+    make: 'Honda',
+    model: 'C-RV',
+    year: 2017,
+    fuel: 'petrol',
+    type: 'SUV',
+    price: 15000,
+    transmission: 'manuel',
+  })
+  await Car.create({
+    make: 'Honda',
+    model: 'C-RV',
+    year: 2020,
+    fuel: 'electric',
+    type: 'SUV',
+    price: 15000,
+    transmission: 'manuel',
+  })
   await Car.create({
     make: 'BMW',
     model: 'X5',
@@ -56,26 +127,46 @@ router.get('/initialize', async (req, res) => {
     price: 72000,
     transmission: 'automatic',
   })
-
   await Car.create({
-    make: 'Mitsubishi',
-    model: 'Outlander',
-    year: 2015,
-    fuel: 'diesel',
+    make: 'BMW',
+    model: 'X7',
+    year: 2020,
+    fuel: 'petrol',
     type: 'SUV',
-    price: 22000,
+    price: 72000,
     transmission: 'automatic',
   })
+  await Car.create({
+    make: 'BMW',
+    model: 'X6',
+    year: 2018,
+    fuel: 'diesel',
+    type: 'SUV',
+    price: 72000,
+    transmission: 'automatic',
+  })
+  res.sendStatus(200)
 })
 router.get('/filter', async (req, res) => {
+  const query = []
   const makeParam = req.query.make
+  if (makeParam) {
+    query.push({
+      make: makeParam,
+    })
+  }
   const fuelParam = req.query.fuel
-  const query = {
-    make: makeParam,
-    fuel: fuelParam,
+  if (fuelParam) {
+    query.push({
+      fuel: fuelParam,
+    })
   }
 
-  res.send(await Car.find(query).catch(error => console.log('Cars not found, error: ', error)))
+  res.send(
+    await Car.find({
+      $and: query,
+    }).catch(error => console.log('Cars not found, error: ', error))
+  )
 })
 
 module.exports = router
