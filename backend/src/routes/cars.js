@@ -43,7 +43,7 @@ router.get('/initialize', async (req, res) => {
     year: 2012,
     fuel: 'petrol',
     type: 'sedan',
-    price: 8000,
+    price: 8200,
     transmission: 'automatic',
   })
   await Car.create({
