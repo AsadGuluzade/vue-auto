@@ -22,26 +22,6 @@
         <p>Price: 5000&euro;</p>
       </figure>
     </b>
-    <b>
-      <figure>
-        <img src=https://cars.usnews.com/static/images/Auto/izmo/336272/2012_mercedes_benz_e_class_angularfront.jpg
-        alt="Toyota" width="250" height="200" />
-
-        <h1>Mercedes-Benz</h1>
-        <h2>E-Klasse</h2>
-        <p>Year: 2012</p>
-        <p>Price: 86000&euro;</p>
-      </figure>
-    </b>
   </div>
 </template>
-<style>
-@media (min-width: 1024px) {
-  .SUV {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    color: black;
-  }
-}
-</style>
+<style></style>

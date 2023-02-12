@@ -6,15 +6,13 @@ import HelloWorld from './components/hello-world.vue'
 <template>
   <header>
     <img
-      alt="Vue logo"
+      alt="Cars logo"
       class="logo"
-      src="https://images.hgmsites.net/lrg/2009-chevrolet-aveo-5dr-hb-lt-w-1lt-angular-front-exterior-view_100245756_l.jpg"
-      width="225"
-      height="225"
+      src="https://www.aubaho.de/media/image/f8/06/ce/BL-226_Seite_2.jpg"
+      height="150"
     />
-
     <div class="wrapper">
-      <HelloWorld msg="Auto" />
+      <HelloWorld msg="Auto Dealer" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -40,9 +38,9 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
-  text-align: center;
+  font-size: 16px;
   margin-top: 2rem;
+  text-align: center;
 }
 
 nav a.router-link-exact-active {
@@ -61,32 +59,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>

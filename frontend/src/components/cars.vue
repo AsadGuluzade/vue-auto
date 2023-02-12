@@ -61,12 +61,31 @@ export default {
     </select>
     <button type="submit">Search</button>
   </form>
-  <div>
-    <div v-for="car in cars" v-bind:key="car.id">
-      <h2>{{ car.make }}</h2>
-      <p>{{ car.model }}</p>
-      <p>{{ car._id }}</p>
-      <p>{{ car.fuel }}</p>
+  <div class="Cars">
+    <div v-for="car in cars" v-bind:key="car.id" class="CarsInner">
+      <b>
+        <figure>
+          <img v-bind:src="car.image" alt="Toyota" width="250" height="200" style="width: 100%" />
+
+          <h1>{{ car.make }}</h1>
+          <h2>{{ car.model }}</h2>
+          <p>Price: {{ car.year }}</p>
+          <p>Year: {{ car.price }}</p>
+        </figure>
+      </b>
     </div>
   </div>
 </template>
+
+<style>
+.Cars::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.CarsInner {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+</style>
