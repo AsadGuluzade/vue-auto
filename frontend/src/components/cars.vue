@@ -54,9 +54,9 @@ export default {
     </select>
     <select v-model="selectedFuel">
       <option value="">Select Fuel</option>
-      <option>diesel</option>
-      <option>petrol</option>
-      <option>electric</option>
+      <option>Diesel</option>
+      <option>Petrol</option>
+      <option>Electric</option>
       <option></option>
     </select>
     <button type="submit">Search</button>
@@ -69,8 +69,8 @@ export default {
 
           <h1>{{ car.make }}</h1>
           <h2>{{ car.model }}</h2>
-          <p>Price: {{ car.year }}</p>
-          <p>Year: {{ car.price }}</p>
+          <p>Year: {{ car.year }}</p>
+          <p>Price: {{ car.price }}&#8364;</p>
         </figure>
       </b>
     </div>
@@ -87,5 +87,26 @@ export default {
   float: left;
   width: 25%;
   padding: 10px;
+}
+select {
+  font-size: 14px;
+  width: 15%;
+  margin-right: 15px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+button {
+  background: #4db7fe;
+  font-size: 14px;
+  width: 15%;
+  margin-right: 15px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+form {
+  text-align: right;
+  padding: 1.5rem;
+  border: 0rem;
 }
 </style>

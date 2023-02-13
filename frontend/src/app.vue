@@ -33,18 +33,18 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.5rem;
 }
 
 nav {
   width: 100%;
   font-size: 16px;
   margin-top: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: #4db7fe;
 }
 
 nav a.router-link-exact-active:hover {
@@ -53,8 +53,9 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 1.5rem;
   border-left: 1px solid var(--color-border);
+  color: #4db7fe;
 }
 
 nav a:first-of-type {

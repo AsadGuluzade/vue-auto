@@ -15,7 +15,7 @@ router.get('/initialize', async (req, res) => {
     year: 2017,
     fuel: 'petrol',
     type: 'SUV',
-    price: 15000,
+    price: 15600,
     transmission: 'manuel',
     image: 'https://tdrresearch.azureedge.net/photos/chrome/Expanded/White/2017HOS020013/2017HOS02001301.jpg',
   })
@@ -25,7 +25,7 @@ router.get('/initialize', async (req, res) => {
     year: 2020,
     fuel: 'electric',
     type: 'SUV',
-    price: 15000,
+    price: 23400,
     transmission: 'manuel',
     image:
       'https://www.cars.com/i/large/in/v2/stock_photos/5690470d-bc11-4bcf-8dd6-95fbb3d2525a/09b87e72-5f80-4e71-a7d6-84718284f154.png',
@@ -36,7 +36,7 @@ router.get('/initialize', async (req, res) => {
     year: 2020,
     fuel: 'electric',
     type: 'SUV',
-    price: 72000,
+    price: 73500,
     transmission: 'automatic',
     image: 'https://media.ed.edmunds-media.com/bmw/x5/2020/oem/2020_bmw_x5_4dr-suv_m50i_fq_oem_1_1600.jpg',
   })
@@ -46,7 +46,7 @@ router.get('/initialize', async (req, res) => {
     year: 2020,
     fuel: 'petrol',
     type: 'SUV',
-    price: 72000,
+    price: 68300,
     transmission: 'automatic',
     image:
       'https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/8bdecb00-c1ec-4334-9436-0a26b20d35a0/d909438c-8634-4a17-a8f7-d59d00a8ebc2.png',
@@ -57,7 +57,7 @@ router.get('/initialize', async (req, res) => {
     year: 2018,
     fuel: 'diesel',
     type: 'SUV',
-    price: 72000,
+    price: 75800,
     transmission: 'automatic',
     image: 'https://cars.usnews.com/static/images/Auto/izmo/i58029937/2018_bmw_x6_angularfront.jpg',
   })
