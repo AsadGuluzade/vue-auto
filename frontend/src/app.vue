@@ -39,7 +39,7 @@ header {
 nav {
   width: 100%;
   font-size: 16px;
-  margin-top: 2rem;
+  margin-top: 0rem;
   text-align: left;
 }
 

@@ -54,9 +54,9 @@ export default {
     </select>
     <select v-model="selectedFuel">
       <option value="">Select Fuel</option>
-      <option>Diesel</option>
-      <option>Petrol</option>
-      <option>Electric</option>
+      <option value="diesel">Diesel</option>
+      <option value="petrol">Petrol</option>
+      <option value="electric">Electric</option>
       <option></option>
     </select>
     <button type="submit">Search</button>
@@ -106,7 +106,8 @@ button {
 }
 form {
   text-align: right;
-  padding: 1.5rem;
+  padding: 0rem;
   border: 0rem;
+  position: relative;
 }
 </style>
